@@ -10,7 +10,9 @@ pub fn remove_accents(text: &str) -> String {
 }
 
 pub fn remove_punctuation(text: &str) -> String {
-    regex_constants::PUNCTUATION_REGEX.replace_all(text, " ").to_string()
+    regex_constants::PUNCTUATION_REGEX
+        .replace_all(text, " ")
+        .to_string()
 }
 
 pub fn remove_blank_spaces(text: &str) -> String {
@@ -18,5 +20,7 @@ pub fn remove_blank_spaces(text: &str) -> String {
 }
 
 pub fn remove_html(text: &str) -> String {
-    regex_constants::HTML_REGEX.replace_all(text, " ").to_string()
+    regex_constants::HTML_REGEX
+        .replace_all(text, " ")
+        .to_string()
 }
