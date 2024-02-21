@@ -9,7 +9,15 @@ fn main() {
     ];
     println!("El texto inicial es: {:?}", &input_text);
 
+    // copy the input text 100_000 times
+    input_text = input_text
+        .iter()
+        .cycle()
+        .take(input_text.len() * 100_000)
+        .cloned()
+        .collect();
+
     // input_text = normalizer::normalize(&mut input_text);
     input_text = normalizer::parallel_normalize(&mut input_text);
-    println!("El texto final es: {:?}", &input_text);
+    println!("El texto final es: {:?}", &input_text[0..7]);
 }
