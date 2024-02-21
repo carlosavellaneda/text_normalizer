@@ -2,7 +2,7 @@ use crate::transforms;
 use rayon::prelude::*;
 
 fn apply_transformations(input_text: &mut str) -> String {
-    let mut input_text = transforms::to_lower(&input_text);
+    let mut input_text = transforms::to_lower(input_text);
     input_text = transforms::remove_accents(&input_text);
     input_text = transforms::replace_escape_characters(&input_text, None, None);
     input_text = transforms::remove_html(&input_text);
@@ -13,7 +13,7 @@ fn apply_transformations(input_text: &mut str) -> String {
     input_text.to_string()
 }
 
-pub fn normalize(vec_text: &mut Vec<String>) -> Vec<String> {
+pub fn normalize(vec_text: &mut [String]) -> Vec<String> {
     vec_text
         .iter_mut()
         .map(|text| apply_transformations(text))
