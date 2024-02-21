@@ -1,3 +1,5 @@
+use std::time::Instant;
+
 use text_normalizer::normalizer;
 
 fn main() {
@@ -9,15 +11,17 @@ fn main() {
     ];
     println!("El texto inicial es: {:?}", &input_text);
 
-    // copy the input text 100_000 times
+    // copy the input text 500_000 times
     input_text = input_text
         .iter()
         .cycle()
-        .take(input_text.len() * 100_000)
+        .take(input_text.len() * 500_000)
         .cloned()
         .collect();
 
+    let start = Instant::now();
     // input_text = normalizer::normalize(&mut input_text);
     input_text = normalizer::parallel_normalize(&mut input_text);
+    println!("Tiempo de ejecución: {:?}", start.elapsed().as_secs_f32());
     println!("El texto final es: {:?}", &input_text[0..7]);
 }

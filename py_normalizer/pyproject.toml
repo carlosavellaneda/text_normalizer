@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "py-normalizer"
+version = "0.1.0"
+description = ""
+authors = ["Carlos Avellaneda <carlos.avellaneda8+1@gmail.com>"]
+readme = "README.md"
+packages = [
+    { include="py_normalizer", from="src"},
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+unidecode = "^1.3.8"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
