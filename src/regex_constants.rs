@@ -9,4 +9,7 @@ lazy_static! {
     pub static ref PUNCTUATION_REGEX: Regex =
         Regex::new(format!(r#"[{}]"#, escape(r#"!"$&'()*+,-_./:;<=>@[\]^`{|}~?°ª#"#),).as_str())
             .unwrap();
+    pub static ref ESCAPE_REGEX: Regex =
+        Regex::new(r#"\\n|\\t|\\r|\\a|\\\\n|\\\\t|\\\\r|\\\\a"#).unwrap();
+    pub static ref NUMBERS_REGEX: Regex = Regex::new(r#"\d+(?:\s+\d+)*"#).unwrap();
 }
