@@ -10,3 +10,7 @@ This repo aims to create a simple benchmark for text normalizing between Rust an
 - [X] Remove HTML tags.
 - [X] Replace special escape characters into a white space.
 - [X] Replace numbers into a specified replacement string. By default, all numbers will be replaced into the string `%number%`.
+
+## Benchmark
+
+For the benchmark, I downloaded the book Don Quijote de la Mancha by Miguel de Cervantes Saavedra, which is available for free on the [Gutenberg Project](https://gutenberg.org/). All the text transformations where executed both sequentially and on parallel.
