@@ -14,11 +14,13 @@ def apply_transformations(input_text: str) -> str:
 
 
 def normalize(vec_text: list[str]) -> list[str]:
-    return [apply_transformations(text) for text in vec_text]
+    return [
+        apply_transformations(text) for text in vec_text
+    ]
 
 
 def parallel_normalize(vec_text: list[str]) -> list[str]:
     with Pool() as pool:
-        normalized_texts = pool.map(apply_transformations, vec_text)
+        normalized_text = pool.map(apply_transformations, vec_text)
 
-    return normalized_texts
+    return normalized_text
