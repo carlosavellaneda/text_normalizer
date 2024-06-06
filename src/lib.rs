@@ -1,5 +1,5 @@
-mod transforms;
 mod regex_constants;
+mod transforms;
 
 use pyo3::prelude::*;
 use rayon::prelude::*;
